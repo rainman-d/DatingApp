@@ -12,6 +12,14 @@
     </label>
   </div>
 
+  <!-- username text input -->
+  <div class="form-group">
+    <input type="text" 
+      [ngClass]="{'is-invalid': registerForm.get('username').errors 
+        && registerForm.get('username').touched}"
+      class="form-control" formControlName="username"  placeholder="Username">
+    <div class="invalid-feedback">Please choose a username</div>
+  </div>
   <!-- Known As text input -->
   <div class="form-group">
     <input [ngClass]="{'is-invalid': registerForm.get('knownAs').errors 
@@ -65,15 +73,6 @@
       && registerForm.get('country').hasError('required')">
         Country is required
     </div>
-  </div>
-
-  <!-- username text input -->
-  <div class="form-group">
-    <input type="text" 
-      [ngClass]="{'is-invalid': registerForm.get('username').errors 
-        && registerForm.get('username').touched}"
-      class="form-control" formControlName="username"  placeholder="Username">
-    <div class="invalid-feedback">Please choose a username</div>
   </div>
   
   <!-- password text input -->
